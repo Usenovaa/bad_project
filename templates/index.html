@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Shopy</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carouses/jqul.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Dosis:400,500|Poppins:400,700&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  <link href="/static/css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="hero_area">
+    <!-- header section starts -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
+          <a class="navbar-brand" href="{% url 'base' %}">
+            <span>
+              Shopy
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav  ">
+                {%if user.is_authenticated %}
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'cart' %}"> Корзина <span class="badge badge-pill badge-danger">0</span></a>
+                </li>
+                <li>
+                  <a class="nav-link" href="{% url 'logout'%}">logout</a>
+                </li>
+                {% endif %}
+                {% if not user.is_authenticated %}
+                <li>
+                  <a class="nav-link" href="{% url 'register-users'%}">register</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="{% url 'login'%}">login</a>
+                </li>
+                {% endif %}
+                <li>
+                  <a class="">{{ user.username }}</a>
+                </li>
+
+              </ul>
+                <!--     Поиск   (лупа)  -->
+<!--              <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">-->
+<!--                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>-->
+<!--              </form>-->
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+    {% block content %}
+
+    <section class=" slider_section position-relative">
+
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="slider_item-box">
+              <div class="slider_item-container">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-5">
+                      <div class="slider_img-box">
+                        <div>
+                          <img src="media/phone.png" alt="" class="" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-7">
+                      <div class="slider_item-detail">
+                        <div>
+                          <h1>
+                            Stylish Smartphones
+                          </h1>
+                          <p>
+                            Welcome :)
+                          </p>
+                          <div class="d-flex">
+                            <a href="" class="slider-btn1 mr-3">
+                              Read More
+                            </a>
+                            <a href="" class="slider-btn2">
+                              Contact Us
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="slider_item-box">
+              <div class="slider_item-container">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-5">
+                      <div class="slider_img-box">
+                        <div>
+                          <img src="media/iphone-13-pink-select-2021.png" alt="" class="" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-7">
+                      <div class="slider_item-detail">
+                        <div>
+                          <h1>
+                            Stylish Smartphones
+                          </h1>
+                          <p>
+                            iPhone 13 and iPhone 13 mini are designed with the following features to reduce their environmental impact
+                          </p>
+                          <div class="d-flex">
+                            <a href="" class="slider-btn1 mr-3">
+                              Read More
+                            </a>
+                            <a href="" class="slider-btn2">
+                              Contact Us
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="slider_item-box">
+              <div class="slider_item-container">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-5">
+                      <div class="slider_img-box">
+                        <div>
+                          <img src="media/macbook.png" alt="" class="" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-7">
+                      <div class="slider_item-detail">
+                        <div>
+                          <h1 class="">
+                            Stylish notebooks
+                          </h1>
+                          <p>
+                            "MacBook" is a term used for a brand of Mac notebook computers that Apple started producing in 2006. The American multinational corporation created MacBook computers when it consolidated its PowerBook and iBook lines during its transition to Intel processor-based products.
+                          </p>
+                          <div class="d-flex">
+                            <a href="" class="slider-btn1 mr-3">
+                              Read More
+                            </a>
+                            <a href="" class="slider-btn2">
+                              Contact Us
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="custom_carousel-control">
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- end slider section -->
+  </div>
+
+
+  <div class="container">
+
+    <div class="row ">
+
+      <div class="col-md-2 mt-5">
+        <div class="list-group">
+          {% for category in categories %}
+          <a href="{{ category.url }}" class="list-group-item">{{ category.name }} ({{ category.count }})</a>
+          {% endfor %}
+        </div>
+
+      </div>
+      <!-- /.col-lg-3 -->
+
+
+
+
+
+      <section class="col-md-10 py-6">
+<!--    row-->
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                  {% for product in products %}
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                          <a href="{{ product.get_absolute_url }}"><img class="card-img-top" src="{{ product.image.url }}" alt=""></a>
+                            <!-- Product image-->
+<!--                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />-->
+                            <!-- Product details-->
+                          <div class="card-body p-4">
+                                <div class="text-center">
+                                  <h4 class="card-title">
+                                    <a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
+                                  </h4>
+                                  <h5 class="fw-bolder">{{ product.price }} сом</h5>
+                                </div>
+                          </div>
+                        </div>
+                    </div>
+                  {% endfor %}
+                </div>
+            </div>
+  </section>
+    <!-- about section -->
+
+
+
+  {% endblock content %}
+
+  <script type="text/javascript" src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+  </div>
+             </div>
+
+  <section class="footer_section">
+    <p>
+      © 2020 All Rights Reserved By
+      <a href="https://html.design/">Free Html Templates</a>
+    </p>
+  </section>
+
+</body>
+
+</html>
